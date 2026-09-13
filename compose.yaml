@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: wattwise-postgres
+    environment:
+      POSTGRES_DB: wattwise
+      POSTGRES_USER: wattwise
+      POSTGRES_PASSWORD: wattwise
+    ports:
+      - "5432:5432"
+    volumes:
+      - wattwise-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  wattwise-postgres-data:
